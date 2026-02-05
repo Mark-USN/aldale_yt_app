@@ -97,16 +97,16 @@ def resolve_project_path(*, start: Path) -> Path:
     """
     return project_root_from_src(start) 
 
-def get_module_path(*, start: Path) -> CachePaths:
-    """Resolve Module directory.
+def get_lib_path(*, start: Path) -> CachePaths:
+    """Resolve lib directory.
 
     Resolution order:
-      Find the projects base path and add src/modules to it..
+      Find the projects base path and add src/lib to it..
 
     Args:
         start: A path under the project's src tree (typically Path(__file__)).
 
     Returns:
-        A Path object pointing to the project's module path.
+        A Path object pointing to the project's lib path.
     """
-    return project_root_from_src(start) / "src" / "modules"
+    return project_root_from_src(start) / "src" / "lib"
